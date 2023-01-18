@@ -9,7 +9,7 @@ services:
    - MONGO_DB_USERNAME=devdb
    - MONGO_DB_PASSWORD=db@123
    networks:
-   - springappbridge
+   - springappnetwork
    mongo:
      image: mongo
      volumes:
@@ -18,14 +18,14 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=devdb
       - MONGO_INITDB_ROOT_PASSWORD=db@123
 networks:
-    springappbridge: 
+    springappnetwork: 
         driver: bridge
 volumes: 
 mongovol:
   driver: local
     
 volumes:
-  mongodb:
+  mongovol:
     external: true
     
 networks:
